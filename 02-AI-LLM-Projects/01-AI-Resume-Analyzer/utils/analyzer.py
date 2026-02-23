@@ -3,12 +3,6 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from pathlib import Path
 
-
-import os
-from openai import OpenAI
-from dotenv import load_dotenv
-
-
 def get_openai_client():
     """
     Load environment variables safely
@@ -38,6 +32,34 @@ def analyze_resume(resume_text):
 
     Resume:
     {resume_text}
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return response.choices[0].message.content
+def analyze_resume_with_job(resume_text, job_description):
+
+    client = get_openai_client()
+
+    prompt = f"""
+    Compare the Resume and Job Description.
+
+    Provide:
+
+    1. Match Score (%)
+    2. Matching Skills
+    3. Missing Skills
+    4. Improvement Suggestions
+    5. Hiring Recommendation (Yes/No)
+
+    Resume:
+    {resume_text}
+
+    Job Description:
+    {job_description}
     """
 
     response = client.chat.completions.create(
