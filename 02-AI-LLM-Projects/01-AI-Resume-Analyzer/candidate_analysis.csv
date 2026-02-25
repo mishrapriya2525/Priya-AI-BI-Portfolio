@@ -1,0 +1,3 @@
+match_score,matching_skills,missing_skills,recommendation,candidate_name
+2,"['Fast Learner', 'Adaptability']","['AI knowledge/experience', 'Tutoring experience', 'Specific programming languages or frameworks relevant to AI']",No,ADITYA SINGH Resume.pdf
+20,['Teaching & Mentoring'],"['Experience with AI technologies', 'Machine Learning', 'Data Analysis', 'Natural Language Processing']",No,testresume.pdf
