@@ -1,5 +1,6 @@
 import os
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+
 
 
 def load_medical_documents(data_path="data/medical_papers"):

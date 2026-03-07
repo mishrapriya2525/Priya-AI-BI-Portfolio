@@ -1,5 +1,9 @@
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from rag_pipeline.rag_engine import chunk_documents
 
 
